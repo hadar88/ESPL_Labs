@@ -1,0 +1,13 @@
+# All Targets
+all: task0 
+
+# Tool invocations
+task0: print.o 
+	ld -m elf_i386 print.o  -o task0
+
+print.o:
+	nasm -f elf32 print.s -o print.o
+
+# Other Targets
+clean:
+	rm -f task0 *.o
